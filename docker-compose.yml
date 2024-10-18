@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  api1:
+    image: api
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8000:8000"
+
+  api2:
+    image: api
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8001:8000"
